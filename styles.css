@@ -2,7 +2,7 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #b19898;
+    background-color: rgba(235,221,174,255);
     color: #333;
     display: flex;
     flex-direction: column;
@@ -10,23 +10,45 @@ body {
 }
 
 .header {
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(231,212,165,255);
     color: #fff;
     padding: 10px 0;
-    position: relative;
+    position: fixed;
+    width: 100%;
+    top: 0;
     z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .header__container {
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header__logo img {
+    width: 50px;
+    height: auto;
+}
+
+.header__nav-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
 }
 
 .header__nav {
     display: flex;
     justify-content: center;
     padding: 0;
-    margin: 0;
+    margin: 0 0 0 -50px;
     list-style: none;
+    flex: 1;
 }
 
 .header__nav-item {
@@ -34,7 +56,7 @@ body {
 }
 
 .header__nav-link {
-    color: #fff;
+    color: #233134;
     text-decoration: none;
     font-size: 16px;
     transition: color 0.3s;
@@ -44,10 +66,6 @@ body {
     color: #ddd;
 }
 
-.header__logo {
-    margin-bottom: 10px;
-}
-
 .hero {
     background: url('path/to/your/image.jpg') no-repeat center center/cover;
     display: flex;
@@ -55,6 +73,7 @@ body {
     align-items: center;
     height: 100vh;
     text-align: center;
+    padding-top: 80px;
 }
 
 .hero__content {
@@ -105,7 +124,7 @@ body {
 .contact-video__container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 150px; /* Добавлено расстояние между блоками */
+    gap: 150px;
     width: 100%;
     max-width: 1200px;
 }
@@ -189,11 +208,6 @@ body {
 .video-section {
     display: flex;
     flex-direction: column;
-}
-
-.video-section__title {
-    font-size: 24px;
-    margin-bottom: 10px;
 }
 
 .video-section__text {
