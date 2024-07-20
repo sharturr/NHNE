@@ -175,8 +175,7 @@ body {
 }
 
 .contact-form__textarea {
-    height: auto;
-    min-height: 22px;
+    height: 22px;
     resize: vertical;
 }
 

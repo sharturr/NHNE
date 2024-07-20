@@ -4,7 +4,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     form.addEventListener('submit', function(event) {
         event.preventDefault();
-        validateForm();
+        if (validateForm()) {
+            sendMessageToGoogleSheets();
+        }
     });
 
     inputs.forEach(input => {
@@ -20,17 +22,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 valid = false;
             }
         });
-        if (valid) {
-            alert('Form submitted successfully!');
-        }
+        return valid;
     }
 
     function validateField(input) {
         const isEmail = input.type === 'email';
+        const isPhone = input.type === 'text' && input.id === 'phone';
         const isEmpty = input.value.trim() === '';
         const isInvalidEmail = isEmail && !validateEmail(input.value.trim());
+        const isInvalidPhone = isPhone && !validatePhone(input.value.trim());
 
-        if (isEmpty || isInvalidEmail) {
+        if (isEmpty || isInvalidEmail || isInvalidPhone) {
             input.classList.add('error');
             input.classList.remove('valid');
             return false;
@@ -44,5 +46,30 @@ document.addEventListener('DOMContentLoaded', function() {
     function validateEmail(email) {
         const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
         return re.test(String(email).toLowerCase());
+    }
+
+    function validatePhone(phone) {
+        const re = /^[0-9]{10,15}$/;
+        return re.test(phone);
+    }
+
+    function sendMessageToGoogleSheets() {
+        const url = 'https://script.google.com/macros/s/AKfycby8jcdY1ibrx6ujJ-IdvaPTMYcbqDVuoNAS8OxuKAgU89h9JomxgPgHYCZqCmmiHiRW/exec';
+        const data = new FormData(form);
+
+        fetch(url, {
+            method: 'POST',
+            body: data,
+        })
+        .then(response => response.json())
+        .then(result => {
+            console.log('Success:', result);
+            alert('Form submitted successfully!');
+            form.reset();
+            inputs.forEach(input => input.classList.remove('valid', 'error'));
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
     }
 });
