@@ -10,9 +10,10 @@ body {
 }
 
 .header {
-    background: rgba(231,212,165,255);
+    background: rgba(255, 255, 255, 0.2); /* Полупрозрачный белый фон */
+    backdrop-filter: blur(10px); /* Эффект размытия */
+    -webkit-backdrop-filter: blur(10px); /* Для Safari */
     color: #fff;
-    padding: 10px 0;
     position: fixed;
     width: 100%;
     top: 0;
@@ -20,6 +21,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Легкая тень для лучшей видимости */
 }
 
 .header__container {
@@ -32,7 +34,7 @@ body {
 }
 
 .header__logo img {
-    width: 50px;
+    width: 70px;
     height: auto;
 }
 
@@ -46,7 +48,7 @@ body {
     display: flex;
     justify-content: center;
     padding: 0;
-    margin: 0 0 0 -50px;
+    margin: 10px 0 10px -70px;
     list-style: none;
     flex: 1;
 }
@@ -101,12 +103,12 @@ body {
     display: inline-block;
     text-decoration: none;
     transition: background-color 0.3s;
+    border-radius: 7px; /* Закругление углов */
 }
 
 .hero__button:hover {
     background-color: #ddd;
 }
-
 
 .footer {
     background: #333;
@@ -195,12 +197,14 @@ body {
 .contact-form__button {
     width: 100%;
     padding: 15px;
+    margin-top: 10px;
     font-size: 16px;
     background-color: #333;
     color: #fff;
     border: none;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s;
+    border-radius: 7px; /* Закругление углов */
 }
 
 .contact-form__button:hover {
@@ -225,6 +229,7 @@ body {
 
 .video-section__button {
     padding: 10px 20px;
+    margin-top: 10px;
     font-size: 16px;
     background-color: #333;
     color: #fff;
@@ -234,8 +239,10 @@ body {
     display: inline-block;
     text-decoration: none;
     transition: background-color 0.3s;
+    border-radius: 7px; /* Закругление углов */
 }
 
 .video-section__button:hover {
     background-color: #555;
+    transform: translateY(-2px);
 }
