@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,17 +8,17 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <!-- Header -->
     <header class="header">
-        <div class="header__container">
-            <div class="header__logo">
-                <!-- Место для логотипа -->
+        <div class="container">
+            <!-- Место для логотипа -->
+            <a href="#home" class="header__logo">
                 <img src="./assets/Logo.png" alt="Logo">
-            </div>
+            </a>
             <nav class="header__nav-container">
                 <ul class="header__nav">
-                    <li class="header__nav-item"><a href="#home" class="header__nav-link">Главная</a></li>
                     <li class="header__nav-item"><a href="about.html" class="header__nav-link">О нас</a></li>
                     <li class="header__nav-item"><a href="contact.html" class="header__nav-link">Контакты</a></li>
                 </ul>
@@ -28,50 +29,63 @@
     <main>
         <!-- Блок Home -->
         <section id="home" class="hero">
+
             <div class="hero__content">
                 <h1 class="hero__title">International Bible Study Center</h1>
                 <p class="hero__subtitle">Ваш духовный путь начинается отсюда</p>
-                <a href="#contact-form" class="hero__button">Присоединяйтесь к нашему онлайн курсу по изучению Библии</a>
+                <a href="#contact-form" class="hero__button">Присоединяйтесь к нашему онлайн курсу по изучению
+                    Библии</a>
             </div>
         </section>
 
-        <!-- Блок Contact и Video -->
-        <section id="contact-video" class="contact-video">
-            <div class="contact-video__container">
-                <div class="contact-form" id="contact-form">
-                    <h2 class="contact-form__title">О нас</h2>
-                    <p class="contact-form__text">Есть вопросы или хотите зарегистрироваться? Напишите нам, и мы свяжемся с Вами!</p>
-                    <form class="contact-form__form">
-                        <div class="contact-form__group">
-                            <label for="first-name" class="contact-form__label">Имя *</label>
-                            <input type="text" id="first-name" name="firstName" class="contact-form__input" required>
-                        </div>
-                        <div class="contact-form__group">
-                            <label for="last-name" class="contact-form__label">Фамилия *</label>
-                            <input type="text" id="last-name" name="lastName" class="contact-form__input" required>
-                        </div>
-                        <div class="contact-form__group">
-                            <label for="phone" class="contact-form__label">Контактный номер (вацап/телеграм) *</label>
-                            <input type="text" id="phone" name="phone" class="contact-form__input" required>
-                        </div>
-                        <div class="contact-form__group">
-                            <label for="email" class="contact-form__label">Email *</label>
-                            <input type="email" id="email" name="email" class="contact-form__input" required>
-                        </div>
-                        <div class="contact-form__group">
-                            <label for="message" class="contact-form__label">Сообщение для нас *</label>
-                            <textarea id="message" name="message" class="contact-form__textarea" required></textarea>
-                        </div>
-                        <button type="submit" class="contact-form__button">Подтвердить</button>
-                    </form>
-                </div>
-                <div class="video-section">
-                    <h2 class="video-section__title">Посмотрите наше недавнее видео</h2>
-                    <p class="video-section__text">Как молитва изменяет жизнь</p>
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/wIAajvjVLuo?si=1ebFAd4kE9RzpxZI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    <a href="https://youtube.com/@nhne-q2x?si=c7MRkfLnshSYJZRo" target="_blank" class="video-section__button">Посмотреть другие видео</a>
-                </div>
+
+        <section class="contact-form container" id="contact-form">
+            <div class="card-post left-card card"></div>
+            <div class="card">
+                <h2 class="contact-form__title">Регистрация</h2>
+                <p class="contact-form__text">Есть вопросы или хотите зарегистрироваться? Напишите нам, и мы свяжемся с
+                    Вами!</p>
+                <form class="contact-form__form">
+                    <div class="contact-form__group">
+                        <label for="first-name" class="contact-form__label">Имя *</label>
+                        <input type="text" id="first-name" name="firstName" class="contact-form__input" required>
+                    </div>
+                    <div class="contact-form__group">
+                        <label for="last-name" class="contact-form__label">Фамилия *</label>
+                        <input type="text" id="last-name" name="lastName" class="contact-form__input" required>
+                    </div>
+                    <div class="contact-form__group">
+                        <label for="phone" class="contact-form__label">Контактный номер (вацап/телеграм) *</label>
+                        <input type="text" id="phone" name="phone" class="contact-form__input" required>
+                    </div>
+                    <!-- <div class="contact-form__group">
+                        <label for="email" class="contact-form__label">Email *</label>
+                        <input type="email" id="email" name="email" class="contact-form__input" required>
+                    </div> -->
+                    <div class="contact-form__group">
+                        <label for="message" class="contact-form__label">Сообщение для нас *</label>
+                        <textarea id="message" name="message" class="contact-form__textarea" required></textarea>
+                    </div>
+                    <button type="submit" class="contact-form__button">Подтвердить</button>
+                </form>
             </div>
+
+            <div class="card-post right-card card"></div>
+        </section>
+
+
+
+        <!-- Блок Contact и Video -->
+        <section id="contact-video" class="contact-video container">
+            <div class="video-section">
+                <h2 class="video-section__title">Посмотрите наше недавнее видео</h2>
+                <p class="video-section__text">Как молитва изменяет жизнь</p>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/wIAajvjVLuo?si=1ebFAd4kE9RzpxZI"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <a href="https://youtube.com/@nhne-q2x?si=c7MRkfLnshSYJZRo" target="_blank"
+                    class="video-section__button">Посмотреть другие видео</a>
         </section>
     </main>
 
@@ -80,4 +94,5 @@
     </footer>
     <script src="scripts.js"></script>
 </body>
+
 </html>

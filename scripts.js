@@ -26,13 +26,13 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function validateField(input) {
-        const isEmail = input.type === 'email';
+        // const isEmail = input.type === 'email';
         const isPhone = input.type === 'text' && input.id === 'phone';
         const isEmpty = input.value.trim() === '';
-        const isInvalidEmail = isEmail && !validateEmail(input.value.trim());
+        // const isInvalidEmail = isEmail && !validateEmail(input.value.trim());
         const isInvalidPhone = isPhone && !validatePhone(input.value.trim());
 
-        if (isEmpty || isInvalidEmail || isInvalidPhone) {
+        if (isEmpty || isInvalidPhone) {
             input.classList.add('error');
             input.classList.remove('valid');
             return false;
@@ -43,10 +43,10 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    function validateEmail(email) {
-        const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-        return re.test(String(email).toLowerCase());
-    }
+    // function validateEmail(email) {
+    //     const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    //     return re.test(String(email).toLowerCase());
+    // }
 
     function validatePhone(phone) {
         const re = /^[0-9]{10,15}$/;
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function sendMessageToGoogleSheets() {
-        const url = 'https://script.google.com/macros/s/AKfycby8jcdY1ibrx6ujJ-IdvaPTMYcbqDVuoNAS8OxuKAgU89h9JomxgPgHYCZqCmmiHiRW/exec';
+        const url = 'https://script.google.com/macros/s/AKfycbynpRHI2Mc-W4BEIQaF7h9gYdVJW5pzSObs1uA49uv_lyNDfVrzbtALsIdug8QQ4CYb/exec';
         const data = new FormData(form);
 
         fetch(url, {
