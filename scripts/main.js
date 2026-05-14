@@ -1,22 +1,33 @@
- document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
+
+  console.log("FORM SCRIPT LOADED");
 
   const form = document.querySelector('.form');
-  if (!form) return;
+  if (!form) {
+    console.log("FORM NOT FOUND");
+    return;
+  }
 
   const inputs = form.querySelectorAll('input');
 
-  const url = 'https://script.google.com/macros/s/AKfycbye-NSCe_pYOBU0irZqYPcwR8mDHAhsKVpX63l92xdlBzJ-R2inkSwgFz3aoER0nN4MFQ/exec';
+  const url = "https://script.google.com/macros/s/AKfycbye-NSCe_pYOBU0irZqYPcwR8mDHAhsKVpX63l92xdlBzJ-R2inkSwgFz3aoER0nN4MFQ/exec";
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    if (validateForm()) {
+    console.log("SUBMIT CLICKED");
+
+    const isValid = validateForm();
+
+    console.log("VALID:", isValid);
+
+    if (isValid) {
       sendForm();
     }
   });
 
   inputs.forEach(input => {
-    input.addEventListener('blur', () => validateField(input));
+    input.addEventListener('input', () => validateField(input));
   });
 
   function validateForm() {
@@ -56,18 +67,18 @@
 
   function sendForm() {
 
-    const data = new FormData(form);
+    console.log("SENDING FORM...");
 
-    showStatus('loading');
+    const data = new FormData(form);
 
     fetch(url, {
       method: 'POST',
       body: data
     })
     .then(res => res.text())
-    .then(() => {
+    .then(res => {
 
-      showStatus('success');
+      console.log("SUCCESS:", res);
 
       form.reset();
 
@@ -76,24 +87,9 @@
       });
 
     })
-    .catch(() => {
-      showStatus('error');
+    .catch(err => {
+      console.log("ERROR:", err);
     });
-  }
-
-  function showStatus(type) {
-
-    if (type === 'loading') {
-      console.log('Отправка...');
-    }
-
-    if (type === 'success') {
-      console.log('Заявка отправлена!');
-    }
-
-    if (type === 'error') {
-      console.log('Ошибка отправки');
-    }
   }
 
 });

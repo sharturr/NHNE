@@ -101,6 +101,15 @@
   outline: 2px solid var(--color-accent);
 }
 
+.form__input.error {
+  border: 1px solid #d9534f;
+  box-shadow: 0 0 0 3px rgba(217, 83, 79, 0.15);
+}
+
+.form__input.valid {
+  border: 1px solid #5cb85c;
+}
+
 .program-subtitle {
   font-size: 22px;
   margin-bottom: 20px;
