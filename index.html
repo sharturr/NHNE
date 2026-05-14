@@ -553,33 +553,27 @@
 				<form class="form">
 
 					<div class="form__group">
-
 						<label for="name" class="form__label">
 							ФИО
 						</label>
-
-						<input type="text" id="name" name="name" class="form__input" placeholder="Ваше имя">
-
+						<input type="text" id="name" name="name" required class="form__input" placeholder="Ваше имя">
+						<span class="form__error"></span>
 					</div>
 
 					<div class="form__group">
-
 						<label for="phone" class="form__label">
 							Телефон
 						</label>
-
-						<input type="tel" id="phone" name="phone" class="form__input" placeholder="+7 () - -">
-
+						<input type="tel" id="phone" name="phone" required class="form__input" placeholder="+7 () - -">
+						<span class="form__error"></span>
 					</div>
-
+ 
 					<div class="form__group">
-
 						<label for="telegram" class="form__label">
 							Telegram
 						</label>
-
-						<input type="text" id="telegram" name="telegram" class="form__input" placeholder="@username">
-
+						<input type="text" id="telegram" name="telegram" required class="form__input" placeholder="@username">
+						<span class="form__error"></span>
 					</div>
 
 					<button type="submit" class="button button--full">
@@ -596,20 +590,12 @@
 
 	<!-- FOOTER -->
 	<footer class="footer">
-
 		<div class="container footer__container">
-
 			<p class="footer__copy">
 				© 2026 Название организации
 			</p>
-
 		</div>
-
 	</footer>
-
-
-
-
 
 	<!-- Scripts -->
 	<script src="./scripts/main.js"></script>
