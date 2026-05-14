@@ -1,0 +1,36 @@
+@media (min-width: 768px) {
+
+  .burger {
+    display: none;
+  }
+
+  .nav {
+    display: flex;
+    gap: 24px;
+  }
+
+	.logo img {
+    width: 92px;
+  }
+
+  .socials {
+    display: flex;
+    gap: 16px;
+  }
+
+  .program__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .reviews__list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+	
+	.program-info {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .level-card {
+    min-width: 360px;
+  }
+}

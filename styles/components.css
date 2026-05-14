@@ -1,0 +1,158 @@
+.logo {
+	width: 64px;
+  opacity: 0.95;
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 72px;
+  height: auto;
+
+  object-fit: contain;
+}
+
+.nav {
+  display: none;
+}
+
+.socials {
+  display: none;
+}
+
+.burger {
+  font-size: 28px;
+  color: white;
+}
+
+
+
+/* CARDS */
+
+.program-card,
+.qa-card,
+.review-card {
+
+  padding: 24px;
+
+  border: 1px solid var(--color-border);
+
+  border-radius: var(--radius-lg);
+
+  background: rgba(255, 255, 255, 0.55);
+
+  backdrop-filter: blur(10px);
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
+}
+.program-card,
+.qa-card,
+.review-card {
+  transition: var(--transition-medium);
+}
+
+.program-card:hover,
+.qa-card:hover,
+.review-card:hover {
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.65);
+}
+.qa-card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+
+
+/* FORM */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form__group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form__label {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.form__input {
+  height: 56px;
+
+  padding-inline: 16px;
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+
+  background: rgba(255, 255, 255, 0.6);
+
+  color: var(--color-text);
+}
+
+.form__input:focus {
+  outline: 2px solid var(--color-accent);
+}
+
+.program-subtitle {
+  font-size: 22px;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.levels-slider {
+  display: flex;
+  gap: 20px;
+
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+
+  padding-bottom: 40px;
+
+  scrollbar-width: none;
+}
+
+.levels-slider::-webkit-scrollbar {
+  display: none;
+}
+
+.level-card {
+  min-width: 85%;
+  scroll-snap-align: start;
+
+  padding: 28px;
+
+  border-radius: var(--radius-lg);
+
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+
+  border: 1px solid var(--color-border);
+
+  box-shadow: 0 12px 30px rgba(0,0,0,0.05);
+
+  transition: transform 0.3s ease;
+}
+
+.level-card:hover {
+  transform: translateY(-4px);
+}
+
+.level-card__title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.level-card__text {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--color-text);
+}
